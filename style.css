@@ -238,3 +238,8 @@ input, button {
         font-size: 3rem;
     }
 }
+
+.gorjeta .botao-ativo{
+    background-color: var(--light-green);
+    color: var(--green-800);
+}
