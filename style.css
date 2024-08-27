@@ -16,6 +16,8 @@
     --green-700: #3d6666;
     --green-800: #00474b;
     --light-green: #26c2ae;
+    --green-hover: #9fe8df;
+    --danger: #e15457;
 }
 
 body{
@@ -48,7 +50,7 @@ main{
 }
 
 .conta div,
-.pessoas div{
+.pessoas .input-box{
     margin-top: 0.4rem;
     background-color: var(--green-100);
     padding: 0.4rem 1.2rem;
@@ -80,8 +82,11 @@ input[type="number"]::-webkit-inner-spin-button{
 }
 
 .conta:has(input:focus) div,
-.pessoas:has(input:focus) div,
-.gorjeta input[type="number"]:focus{
+.conta:has(input:hover) div,
+.pessoas:has(input:focus) .input-box,
+.pessoas:has(input:hover) .input-box,
+.gorjeta input[type="number"]:focus,
+.gorjeta input[type="number"]:hover{
     outline: 2px solid var(--light-green);
 }
 
@@ -104,6 +109,19 @@ input[type="number"]::-webkit-inner-spin-button{
     color: var(--white);
 }
 
+input, button {
+    cursor: pointer;
+}
+
+.gorjeta input[type="button"]{
+    transition: all ease 0.5s;
+}
+
+.gorjeta input[type="button"]:hover,
+.resultados button:hover{
+    background-color: var(--green-hover);
+}
+
 .gorjeta #outra{
     width: 100%;
     background-color: var(--green-100);
@@ -114,7 +132,20 @@ input[type="number"]::-webkit-inner-spin-button{
     color: var(--green-300);
 }
 
+.pessoas .textos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pessoas #erroDiv{
+    outline: 2px solid var(--danger);
+}
+
 .pessoas #erro{
+    font-size: 0.75rem;
+    color: var(--danger);
+    font-weight: 700;
     display: none;
 }
 
@@ -163,6 +194,7 @@ input[type="number"]::-webkit-inner-spin-button{
     text-transform: uppercase;
     font-size: 1.25rem;
     padding-block: 0.5rem;
+    transition: all ease 0.5s;
 }
 
 @media(min-width: 920px) {
